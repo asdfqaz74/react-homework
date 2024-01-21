@@ -1,7 +1,7 @@
 import React from "react";
 import icons from "../../assets/svg/icons";
 
-export default function HeaderNav() {
+export function HeaderNav() {
   return (
     <header className="sticky top-0 bg-background h-[2.8125rem] z-10">
       <div className="flex justify-between w-full px-5 py-2">

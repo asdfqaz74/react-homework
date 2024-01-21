@@ -1,25 +1,26 @@
 import React from "react";
 
-export default function BoardNav() {
+export function BoardNav(props) {
+  const { data } = props;
   return (
     <nav class="sticky top-[2.8125rem]">
       <ul class="flex gap-1 p-2 text-base font-semibold leading-4 top-11 bg-primary text-Contents-contentTertiary">
         <li class="text-background mx-auto">
-          <a href="/">선배님 스토리</a>
+          <a href="/">{data.title[0]}</a>
         </li>
         <li class="mx-auto">
           <a class="" href="/">
-            기기 거래
+            {data.title[1]}
           </a>
         </li>
         <li class="mx-auto">
           <a class="" href="/">
-            질의 응답
+            {data.title[2]}
           </a>
         </li>
         <li class="mx-auto">
           <a class="" href="/">
-            같이 해요
+            {data.title[3]}
           </a>
         </li>
       </ul>
