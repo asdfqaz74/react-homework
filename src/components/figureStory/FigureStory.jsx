@@ -8,7 +8,7 @@ export default function FigureStory(props) {
       <img
         src={imageSrc[number]}
         alt={alt[number]}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover rounded-3xl"
       />
       <figcaption className="py-1">
         {contents[number]}
