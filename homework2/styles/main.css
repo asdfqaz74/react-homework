@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.ttf') format('truetype');
+  }
+
+  html {
+    font-family: 'Pretendard', sans-serif;
+  }
+}
+
+@layer components {
+
+  .exchange-reservation {
+    @apply text-center bg-tertiary rounded-default text-sm font-semibold text-background px-1 py-[0.125rem] leading-normal sm:text-lg
+  }
+
+  .exchange-done {
+    @apply text-center bg-Contents-contentTertiary rounded-default text-sm font-semibold text-background px-1 py-[0.125rem] leading-normal sm:text-lg
+  }
+}
