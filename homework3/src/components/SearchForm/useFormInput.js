@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { debounce } from '../../lib/debounce';
 /**
- * 검색창 커스텀 훅.
+ * 검색창 커스텀 훅. 검색창에 쓴 값을 필터링해준다.
  * @param {string} initValue - API(pocketbase)에서 불러올 정보. 예를 들어서 products, user 등..
  * @param {string} type - data에서 불러올 정보. 예를 들어 title, nickName 등...
  * @returns ...props에 들어갈 정보들, 필터링된 키워드
@@ -35,11 +35,14 @@ export default function useFormInput(initValue, type) {
 
   // 입력에 따른 데이터 필터링
   useEffect(() => {
-    const isSearchTermBlank = searchTerm.trim().length;
-    console.log(isSearchTermBlank);
-    if (isSearchTermBlank === 0) return;
+    const isSearchTermEmpty = searchTerm.trim().length;
+    console.log(isSearchTermEmpty);
+    if (isSearchTermEmpty === 0) {
+      return setFilterKeywords([]);
+    }
 
     const filtered = data.filter((keyword) => keyword.includes(searchTerm));
+
     setFilterKeywords(filtered);
   }, [searchTerm]);
 
