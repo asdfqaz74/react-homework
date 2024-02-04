@@ -38,7 +38,7 @@ function App() {
         <h2 ref={secondH2Ref}>이름을 검색해보세요.</h2>
         <SearchForm initValue={'users'} type={'nickName'} />
       </div>
-      <div role="group" className="flex gap-40">
+      <div role="group" className="flex mx-auto gap-10">
         <div>
           <h3 className="font-semibold">상품목록</h3>
           <ul>
