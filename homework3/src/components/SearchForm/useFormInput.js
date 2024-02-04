@@ -36,7 +36,6 @@ export default function useFormInput(initValue, type) {
   // 입력에 따른 데이터 필터링
   useEffect(() => {
     const isSearchTermEmpty = searchTerm.trim().length;
-    console.log(isSearchTermEmpty);
     if (isSearchTermEmpty === 0) {
       return setFilterKeywords([]);
     }
