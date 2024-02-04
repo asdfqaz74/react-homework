@@ -4,6 +4,7 @@ export default {
     './index.html',
     './homework1/**/*.{html,js,jsx,ts,tsx}',
     './homework2/**/*.{html,js,jsx,ts,tsx}',
+    './homework3/**/*.{html,js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
