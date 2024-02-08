@@ -5,6 +5,7 @@ export default {
     './homework1/**/*.{html,js,jsx,ts,tsx}',
     './homework2/**/*.{html,js,jsx,ts,tsx}',
     './homework3/**/*.{html,js,jsx,ts,tsx}',
+    './homework4/**/*.{html,js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
@@ -107,5 +108,5 @@ export default {
       full: '9999px',
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animated')],
 };
