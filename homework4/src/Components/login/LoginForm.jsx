@@ -1,34 +1,18 @@
+import InputId from './IdPwInput/InputId';
+import InputPw from './IdPwInput/InputPw';
+import useCheckedValue from './IdPwInput/useCheckedValue';
+import LoginButton from './LoginButton/LoginButton';
+
 export default function LoginForm() {
+  useCheckedValue;
   return (
     <div className="flex flex-col items-center justify-center bg-[#FFE650] h-screen gap-40">
       <form method="post">
         <div className="flex flex-col gap-1 mb-3">
-          <label htmlFor="email" className="sr-only">
-            이메일
-          </label>
-          <input
-            value={'asdf'}
-            type="email"
-            id="email"
-            placeholder="이메일 입력"
-            className="border px-2 py-1"
-          />
-          <label htmlFor="password" className="sr-only">
-            비밀번호
-          </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호 입력"
-            className="border px-2 py-1"
-          />
+          <InputId />
+          <InputPw />
         </div>
-        <button
-          type="submit"
-          className="w-full bg-[#8B4513] rounded-sm text-background py-1 font-semibold"
-        >
-          로그인
-        </button>
+        <LoginButton />
         <div className="flex gap-2 mt-4">
           <input type="checkbox" name="remember" id="remember" className="" />
           <label htmlFor="remember">Remember me</label>
