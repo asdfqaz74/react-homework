@@ -58,6 +58,9 @@ devDependencies:
   eslint-plugin-storybook:
     specifier: ^0.6.15
     version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
+  pocketbase:
+    specifier: ^0.21.1
+    version: 0.21.1
   postcss:
     specifier: ^8.4.33
     version: 8.4.33
@@ -7337,6 +7340,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       find-up: 5.0.0
+    dev: true
+
+  /pocketbase@0.21.1:
+    resolution: {integrity: sha512-0PvCP4pKtxsV9kwldEGyibEvhwOcx9jSCrz3WN5CgPILJfM0z76f1op9WE8/8UgikDsMdRsc5iBLfKintrJS1g==}
     dev: true
 
   /polished@4.3.1:

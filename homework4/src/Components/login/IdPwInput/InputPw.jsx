@@ -1,10 +1,6 @@
-import useCheckedValue from './useCheckedValue';
+import { elementType, func, string } from 'prop-types';
 
-export default function InputPw() {
-  const pwRegex =
-    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[a-zA-Z\d@$!%*?&]{8,}$/;
-  const { value, checkedValue, handleInput } = useCheckedValue(pwRegex);
-
+export default function InputPw({ value, onChange, children }) {
   return (
     <>
       <label htmlFor="password" className="sr-only">
@@ -12,17 +8,19 @@ export default function InputPw() {
       </label>
       <input
         value={value}
-        onChange={handleInput}
+        onChange={onChange}
         type="password"
         id="password"
         placeholder="비밀번호 입력"
         className="border px-2 py-1"
       />
-      {!checkedValue && value && (
-        <p className="text-sm text-error">
-          최소 8자리 알파벳,숫자,특수문자를 조합해주세요.
-        </p>
-      )}
+      {children}
     </>
   );
 }
+
+InputPw.propTypes = {
+  value: string,
+  onChange: func,
+  // children: elementType,
+};

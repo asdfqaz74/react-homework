@@ -1,30 +1,22 @@
 import { useState, useEffect } from 'react';
-
-useState;
+import pb from '../../../api/pocketbase';
 
 export default function useFetch(api) {
-  const END_POINT = `${import.meta.env.VITE_PB_URL}${api}`;
-
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    fetch(END_POINT, { signal })
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => {
-        if (!(error instanceof DOMException)) {
-          setError(error);
-        }
-      });
-
-    return () => {
-      controller.abort();
+    const fetchData = async () => {
+      try {
+        const targetData = await pb.collection(api).getFullList();
+        setData(targetData);
+      } catch (error) {
+        setError(error);
+      }
     };
-  }, [END_POINT, setData]);
 
-  return data, error;
+    fetchData();
+  }, [api]);
+
+  return { data, error };
 }

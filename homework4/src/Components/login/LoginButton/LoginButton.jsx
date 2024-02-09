@@ -1,19 +1,17 @@
-import useFetch from './useFetch';
+import { func } from 'prop-types';
 
-export default function LoginButton() {
-  const api = '/api/collections/users/records';
-  const users = useFetch(api);
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-
+export default function LoginButton({ onClick }) {
   return (
     <button
       type="submit"
       className="w-full bg-[#8B4513] rounded-sm text-background py-1 font-semibold"
-      onClick={handleClick}
+      onClick={onClick}
     >
       로그인
     </button>
   );
 }
+
+LoginButton.propTypes = {
+  onClick: func,
+};

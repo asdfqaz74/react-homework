@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { string, bool, func, exact } from 'prop-types';
 
 /**
  * 인풋값에 들어갈 값을 유효성 검사해주는 커스텀 훅(Hook).
@@ -24,13 +23,7 @@ function useCheckedValue(Regex) {
     setCheckedValue(isValid);
   };
 
-  return { value, checkedValue, handleInput };
+  return { value, checkedValue, handleInput, setValue };
 }
-
-useCheckedValue.propTypes = exact({
-  value: string.isRequired,
-  checkedValue: bool.isRequired,
-  handleInput: func.isRequired,
-});
 
 export default useCheckedValue;
